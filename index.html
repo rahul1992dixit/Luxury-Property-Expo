@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Indian Real Estate Expo — Dubai | May 9 & 10</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #D4A843; --gold-light: #E8C060; --gold-pale: #F0D898;
+  --dark: #080C18; --dark-2: #0D1526; --dark-3: #121E35;
+  --navy: #0A1020; --cream: #FFFFFF; --cream-dim: #9BAAC2; --white: #ffffff;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--dark); font-family: 'Montserrat', sans-serif; color: var(--cream); overflow-x: hidden; line-height: 1.6; }
+
+/* HERO */
+.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 24px 60px; text-align: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,12,24,0.70) 0%, rgba(8,12,24,0.50) 40%, rgba(8,12,24,0.88) 100%), url('./skyline.jpg') center center / cover no-repeat; z-index: 0; }
+.hero-grain { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,67,0.12) 0%, transparent 60%), url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); z-index: 0; pointer-events: none; }
+.hero > * { position: relative; z-index: 1; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 9px; font-weight: 700; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; animation: fadeDown 0.8s ease both; }
+.hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); opacity: 0.5; }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 8vw, 88px); font-weight: 600; line-height: 1.0; color: var(--white); letter-spacing: -0.01em; margin-bottom: 12px; animation: fadeDown 0.9s ease 0.1s both; }
+.hero-title em { color: var(--gold-light); font-style: italic; }
+.hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 2.5vw, 24px); font-weight: 300; color: var(--cream-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 36px; animation: fadeDown 0.9s ease 0.18s both; }
+.hero-price { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 36px; animation: fadeDown 1s ease 0.25s both; }
+.hero-price span { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; letter-spacing: 0.04em; color: var(--white); display: block; margin-top: 4px; }
+.event-strip { display: inline-flex; border: 1px solid rgba(201,168,76,0.3); border-radius: 2px; overflow: hidden; margin-bottom: 36px; animation: fadeDown 1s ease 0.3s both; }
+.event-cell { padding: 14px 28px; text-align: center; background: rgba(201,168,76,0.06); border-right: 1px solid rgba(201,168,76,0.2); }
+.event-cell:last-child { border-right: none; }
+.event-cell-label { font-size: 8px; font-weight: 700; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 5px; }
+.event-cell-value { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: var(--white); font-variant-numeric: lining-nums; letter-spacing: 0.03em; }
+.hero-cta { display: inline-flex; flex-direction: column; align-items: center; gap: 5px; padding: 18px 48px; background: linear-gradient(135deg, #B8922E 0%, var(--gold-light) 45%, #C9A84C 75%, #A67C24 100%); color: var(--dark); font-size: 11px; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; border-radius: 2px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(201,168,76,0.35); transition: transform 0.2s ease, box-shadow 0.2s ease; animation: fadeUp 1s ease 0.4s both; }
+.hero-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s ease; }
+.hero-cta:hover::before { left: 100%; }
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.5); }
+.hero-cta-sub { font-size: 8px; font-weight: 500; letter-spacing: 0.2em; opacity: 0.7; }
+.hero-disclaimer { margin-top: 18px; font-size: 9px; color: rgba(201,168,76,0.4); letter-spacing: 0.08em; font-style: italic; animation: fadeUp 1s ease 0.5s both; }
+.scroll-indicator { margin-top: 48px; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0.35; animation: fadeUp 1s ease 0.7s both; }
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(--gold), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+.scroll-text { font-size: 8px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
+@keyframes scrollPulse { 0%,100%{opacity:0.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.2)} }
+
+/* HIGHLIGHT BAND */
+.highlight-band { background: linear-gradient(135deg, #0A1428 0%, #0D1A38 100%); border-top: 1px solid rgba(30,60,140,0.4); border-bottom: 1px solid rgba(30,60,140,0.4); padding: 28px 0; overflow: hidden; }
+.highlight-marquee { display: flex; gap: 48px; white-space: nowrap; animation: marquee 24s linear infinite; width: max-content; }
+.highlight-item { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.highlight-dot { width: 4px; height: 4px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+.highlight-text { font-size: 10px; font-weight: 600; letter-spacing: 0.25em; color: var(--cream-dim); text-transform: uppercase; }
+@keyframes marquee { from{transform:translateX(0)}to{transform:translateX(-50%)} }
+
+/* FEATURED LOCATIONS */
+.featured-locations-wrap { background: var(--dark-2); padding: 48px 24px; display: flex; flex-direction: column; align-items: center; }
+.fl-badge { display: inline-block; background: linear-gradient(135deg, #B8922E 0%, var(--gold-light) 50%, #C9A84C 100%); color: var(--dark); font-size: 9px; font-weight: 900; letter-spacing: 0.35em; text-transform: uppercase; padding: 8px 28px; border-radius: 2px; margin-bottom: 36px; }
+.fl-grid { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 0; border: 1px solid rgba(212,168,67,0.2); background: rgba(212,168,67,0.04); max-width: 1100px; width: 100%; }
+.fl-item { display: flex; flex-direction: column; align-items: center; padding: 24px 20px 20px; flex: 1; min-width: 100px; transition: background 0.3s ease; cursor: default; }
+.fl-item:hover { background: rgba(212,168,67,0.08); }
+.fl-icon { width: 52px; height: 60px; margin-bottom: 12px; }
+.fl-icon svg { width: 100%; height: 100%; }
+.fl-name { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); text-align: center; }
+.fl-divider { width: 1px; height: 80px; background: rgba(212,168,67,0.2); flex-shrink: 0; }
+
+/* PROPERTY / PERKS — keep CSS but hide unused */
+.property-grid { display: none; }
+.perks-strip { display: none; }
+
+/* SECTIONS */
+.section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+.section-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.section-eyebrow::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold); opacity: 0.4; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 600; line-height: 1.1; color: var(--white); margin-bottom: 20px; }
+.section-title em { color: var(--gold-light); font-style: italic; }
+.section-body { font-size: 14px; font-weight: 400; color: var(--cream-dim); line-height: 1.8; max-width: 600px; }
+
+/* PROPERTY GRID */
+.property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.15); margin-top: 48px; }
+.property-card { background: var(--dark-3); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s ease; }
+.property-card:hover { background: #201810; }
+.property-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.4s ease; }
+.property-card:hover::before { height: 100%; }
+.property-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: rgba(201,168,76,0.12); line-height: 1; margin-bottom: 12px; }
+.property-label { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+.property-desc { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--cream); line-height: 1.4; }
+
+/* PERKS STRIP */
+.perks-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); }
+.perk-item { padding: 36px 20px; text-align: center; border-right: 1px solid rgba(201,168,76,0.15); background: rgba(201,168,76,0.02); }
+.perk-item:last-child { border-right: none; }
+.perk-icon { font-size: 18px; color: var(--gold); margin-bottom: 10px; display: block; }
+.perk-title { font-size: 8px; font-weight: 700; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+.perk-desc { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--cream); line-height: 1.3; }
+
+/* WHY ATTEND */
+.why-attend { background: linear-gradient(180deg, rgba(10,20,40,0.93) 0%, rgba(10,20,40,0.93) 100%), url('./skyline.jpg') center center / cover no-repeat; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 48px; }
+.why-card { padding: 36px 28px; border: 1px solid rgba(201,168,76,0.12); background: rgba(201,168,76,0.02); transition: border-color 0.3s ease, background 0.3s ease; position: relative; }
+.why-card:hover { border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.05); }
+.why-card::before, .why-card::after { content: ''; position: absolute; width: 16px; height: 16px; border-color: var(--gold); border-style: solid; opacity: 0; transition: opacity 0.3s ease; }
+.why-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.why-card::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+.why-card:hover::before, .why-card:hover::after { opacity: 1; }
+.why-icon { font-size: 18px; color: var(--gold); margin-bottom: 14px; display: block; }
+.why-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); margin-bottom: 10px; line-height: 1.2; }
+.why-desc { font-size: 13px; color: var(--cream-dim); line-height: 1.7; }
+
+/* DEVELOPERS */
+.developers-section { text-align: center; }
+.developer-names { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.developer-name { padding: 10px 20px; border: 1px solid rgba(201,168,76,0.2); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dim); background: rgba(201,168,76,0.03); transition: all 0.3s ease; }
+.developer-name:hover { border-color: rgba(201,168,76,0.5); color: var(--gold); background: rgba(201,168,76,0.08); }
+.cities { margin-top: 36px; font-size: 10px; font-weight: 600; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; opacity: 0.6; }
+
+/* REGISTER */
+.register-section { background: linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%); padding: 100px 24px; display: flex; flex-direction: column; align-items: center; }
+.register-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.form-card { width: 100%; max-width: 580px; background: linear-gradient(160deg, var(--dark-3) 0%, var(--dark-2) 100%); border: 1px solid rgba(201,168,76,0.25); border-radius: 2px; padding: 52px 48px 48px; position: relative; box-shadow: 0 0 0 1px rgba(201,168,76,0.05), 0 40px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,168,76,0.15); }
+.form-card::before, .form-card::after { content: ''; position: absolute; width: 24px; height: 24px; border-color: var(--gold); border-style: solid; }
+.form-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.form-card::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+.pass-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #B8922E 0%, var(--gold-light) 50%, #C9A84C 100%); color: var(--dark); font-size: 8px; font-weight: 900; letter-spacing: 0.35em; text-transform: uppercase; padding: 6px 24px; border-radius: 2px; white-space: nowrap; }
+.form-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; color: var(--white); text-align: center; margin-bottom: 6px; }
+.form-desc { font-size: 10px; color: var(--cream-dim); text-align: center; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 40px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.field-group { margin-bottom: 28px; }
+.field-label { display: block; font-size: 8px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.field-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(201,168,76,0.25); padding: 10px 0; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--white); outline: none; transition: border-color 0.3s ease; letter-spacing: 0.02em; }
+.field-input::placeholder { color: rgba(242,232,213,0.2); font-style: italic; }
+.field-input:focus { border-bottom-color: var(--gold); }
+.field-input:-webkit-autofill { -webkit-box-shadow: 0 0 0 100px var(--dark-3) inset; -webkit-text-fill-color: #fff; }
+.form-divider { display: flex; align-items: center; gap: 12px; margin: 32px 0; }
+.form-divider-line { flex: 1; height: 1px; background: rgba(201,168,76,0.15); }
+.form-divider-text { font-size: 8px; letter-spacing: 0.3em; color: rgba(201,168,76,0.4); text-transform: uppercase; }
+.submit-btn { width: 100%; padding: 20px; background: linear-gradient(135deg, #B8922E 0%, var(--gold-light) 40%, #C9A84C 70%, #A67C24 100%); border: none; border-radius: 2px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 900; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dark); cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(201,168,76,0.3); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.submit-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent); transition: left 0.5s ease; }
+.submit-btn:hover::before { left: 100%; }
+.submit-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(201,168,76,0.45); }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.btn-sub { display: block; font-size: 8px; font-weight: 500; letter-spacing: 0.2em; margin-top: 4px; opacity: 0.65; }
+.privacy-note { font-size: 10px; color: rgba(242,232,213,0.25); text-align: center; margin-top: 20px; line-height: 1.7; }
+
+/* THANK YOU */
+.thank-you { display: none; width: 100%; max-width: 580px; animation: fadeUp 0.8s ease both; }
+.ty-card { background: linear-gradient(160deg, var(--dark-3) 0%, var(--dark-2) 100%); border: 1px solid rgba(201,168,76,0.25); border-radius: 2px; padding: 64px 48px; text-align: center; box-shadow: 0 40px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,168,76,0.15); position: relative; }
+.ty-card::before, .ty-card::after { content: ''; position: absolute; width: 24px; height: 24px; border-color: var(--gold); border-style: solid; }
+.ty-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.ty-card::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+.ty-icon { width: 72px; height: 72px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; }
+.ty-checkmark { font-size: 28px; color: var(--gold); }
+.ty-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+.ty-heading { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: var(--white); line-height: 1; margin-bottom: 10px; }
+.ty-heading em { color: var(--gold-light); font-style: italic; }
+.ty-subhead { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--cream-dim); margin-bottom: 36px; }
+.ty-divider { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 32px; }
+.ty-details { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.12); padding: 24px; margin-bottom: 28px; text-align: left; }
+.ty-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.08); }
+.ty-row:last-child { border-bottom: none; }
+.ty-label { font-size: 8px; font-weight: 700; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
+.ty-val { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--white); }
+.ty-message { font-size: 12px; color: rgba(242,232,213,0.45); line-height: 1.9; }
+
+/* FOOTER */
+.footer { border-top: 1px solid rgba(201,168,76,0.1); padding: 40px 24px; text-align: center; }
+.footer-text { font-size: 10px; color: rgba(201,168,76,0.35); letter-spacing: 0.12em; }
+
+/* PARTICLES */
+.particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.particle { position: absolute; border-radius: 50%; opacity: 0; background: var(--gold); animation: float linear infinite; }
+@keyframes float { 0%{transform:translateY(100vh);opacity:0}10%{opacity:0.5}90%{opacity:0.2}100%{transform:translateY(-10vh) translateX(30px);opacity:0} }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)} }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .perks-strip{grid-template-columns:1fr 1fr}
+  .perk-item{border-right:none;border-bottom:1px solid rgba(201,168,76,0.15)}
+  .field-row{grid-template-columns:1fr}
+  .form-card,.ty-card{padding:44px 24px 36px}
+}
+@media(max-width:500px){
+  .event-strip{flex-direction:column}
+  .event-cell{border-right:none;border-bottom:1px solid rgba(201,168,76,0.2)}
+  .event-cell:last-child{border-bottom:none}
+  .perks-strip{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-eyebrow">NRI Exclusive · By Invitation Only</div>
+  <h1 class="hero-title">Luxury Indian<br><em>Real Estate Expo</em></h1>
+  <p class="hero-subtitle">Now in Dubai · By India's Biggest Developer</p>
+
+  <div class="event-strip">
+    <div class="event-cell">
+      <div class="event-cell-label">Date</div>
+      <div class="event-cell-value">9 &amp; 10 May</div>
+    </div>
+    <div class="event-cell">
+      <div class="event-cell-label">Time</div>
+      <div class="event-cell-value">9 AM – 10 PM</div>
+    </div>
+    <div class="event-cell">
+      <div class="event-cell-label">Venue</div>
+      <div class="event-cell-value">Business Bay, Dubai</div>
+    </div>
+  </div>
+
+  <a href="#register" class="hero-cta">
+    Reserve Your Free Pass
+    <span class="hero-cta-sub">Limited Spots · First Come First Serve</span>
+  </a>
+
+  <p class="hero-disclaimer">✦ Exclusive event-only offers available for a limited time. T&amp;C apply.</p>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Explore</span>
+  </div>
+</section>
+
+<!-- HIGHLIGHT MARQUEE -->
+<div class="highlight-band">
+  <div class="highlight-marquee">
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Complimentary Valet Parking</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Brunch &amp; High Tea Served</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Spot Booking Offers — Up to 10% Discount</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Complimentary Round-Trip Tickets</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Exclusive Payment Plan — 15% Down &amp; 85% on Handover</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Complimentary Valet Parking</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Brunch &amp; High Tea Served</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Spot Booking Offers — Up to 10% Discount</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Complimentary Round-Trip Tickets</span></div>
+    <div class="highlight-item"><div class="highlight-dot"></div><span class="highlight-text">Exclusive Payment Plan — 15% Down &amp; 85% on Handover</span></div>
+  </div>
+</div>
+
+<!-- FEATURED LOCATIONS -->
+<div class="featured-locations-wrap">
+  <div class="fl-badge">Featured Locations</div>
+  <div class="fl-grid">
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="30" width="40" height="38" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <rect x="20" y="20" width="20" height="48" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <polygon points="30,4 8,22 52,22" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <rect x="25" y="48" width="10" height="20" fill="rgba(212,168,67,0.2)" stroke="#D4A843" stroke-width="1"/>
+          <rect x="13" y="36" width="8" height="8" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="39" y="36" width="8" height="8" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="22" y="28" width="7" height="7" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="31" y="28" width="7" height="7" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="fl-name">Bangalore</div>
+    </div>
+    <div class="fl-divider"></div>
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="15" y="32" width="30" height="36" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <polygon points="30,5 12,24 48,24" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <line x1="30" y1="5" x2="30" y2="14" stroke="#D4A843" stroke-width="1.5"/>
+          <circle cx="30" cy="4" r="2" fill="#D4A843"/>
+          <rect x="25" y="14" width="10" height="10" rx="5" stroke="#D4A843" stroke-width="1.2" fill="none"/>
+          <rect x="20" y="44" width="8" height="24" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="32" y="44" width="8" height="24" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="18" y="36" width="6" height="6" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="36" y="36" width="6" height="6" fill="rgba(212,168,67,0.15)" stroke="#D4A843" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="fl-name">Chennai</div>
+    </div>
+    <div class="fl-divider"></div>
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="28" width="36" height="40" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <polygon points="30,6 10,30 50,30" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <circle cx="30" cy="18" r="5" stroke="#D4A843" stroke-width="1.2" fill="none"/>
+          <rect x="24" y="48" width="12" height="20" fill="rgba(212,168,67,0.2)" stroke="#D4A843" stroke-width="1"/>
+          <rect x="14" y="36" width="7" height="7" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="39" y="36" width="7" height="7" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="fl-name">Pune</div>
+    </div>
+    <div class="fl-divider"></div>
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="22" width="44" height="46" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <rect x="18" y="12" width="24" height="56" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <polygon points="30,3 16,14 44,14" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <rect x="26" y="48" width="8" height="20" fill="rgba(212,168,67,0.2)" stroke="#D4A843" stroke-width="1"/>
+          <rect x="10" y="30" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="44" y="30" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="20" y="20" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="34" y="20" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="fl-name">Mumbai</div>
+    </div>
+    <div class="fl-divider"></div>
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="38" rx="18" ry="28" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <ellipse cx="30" cy="38" rx="10" ry="18" stroke="#D4A843" stroke-width="1" fill="none"/>
+          <line x1="12" y1="38" x2="48" y2="38" stroke="#D4A843" stroke-width="1"/>
+          <line x1="30" y1="10" x2="30" y2="66" stroke="#D4A843" stroke-width="1"/>
+          <circle cx="30" cy="6" r="3" fill="rgba(212,168,67,0.3)" stroke="#D4A843" stroke-width="1.2"/>
+          <line x1="30" y1="9" x2="30" y2="14" stroke="#D4A843" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="fl-name">Kochi</div>
+    </div>
+    <div class="fl-divider"></div>
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="36" width="32" height="32" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <polygon points="30,8 12,38 48,38" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <line x1="30" y1="8" x2="30" y2="18" stroke="#D4A843" stroke-width="2"/>
+          <line x1="22" y1="14" x2="22" y2="20" stroke="#D4A843" stroke-width="1.5"/>
+          <line x1="38" y1="14" x2="38" y2="20" stroke="#D4A843" stroke-width="1.5"/>
+          <rect x="25" y="50" width="10" height="18" fill="rgba(212,168,67,0.2)" stroke="#D4A843" stroke-width="1"/>
+          <rect x="16" y="43" width="7" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="37" y="43" width="7" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="fl-name">Goa</div>
+    </div>
+    <div class="fl-divider"></div>
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="26" width="40" height="42" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <rect x="20" y="16" width="20" height="52" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <polygon points="30,4 18,18 42,18" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <circle cx="30" cy="4" r="1.5" fill="#D4A843"/>
+          <rect x="25" y="48" width="10" height="20" fill="rgba(212,168,67,0.2)" stroke="#D4A843" stroke-width="1"/>
+          <rect x="12" y="32" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="42" y="32" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="22" y="24" width="5" height="5" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="33" y="24" width="5" height="5" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="fl-name">Hyderabad</div>
+    </div>
+    <div class="fl-divider"></div>
+    <div class="fl-item">
+      <div class="fl-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="16" y="30" width="28" height="38" rx="1" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <polygon points="30,8 14,32 46,32" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+          <rect x="22" y="18" width="16" height="14" rx="2" stroke="#D4A843" stroke-width="1.2" fill="none"/>
+          <rect x="25" y="48" width="10" height="20" fill="rgba(212,168,67,0.2)" stroke="#D4A843" stroke-width="1"/>
+          <rect x="18" y="38" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+          <rect x="36" y="38" width="6" height="6" fill="rgba(212,168,67,0.1)" stroke="#D4A843" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div class="fl-name">Delhi NCR</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY ATTEND -->
+<div class="why-attend">
+  <div class="section">
+    <div class="section-eyebrow">Why Attend</div>
+    <h2 class="section-title">Your Gateway to<br><em>Indian Real Estate</em></h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">◈</span>
+        <div class="why-title">Explore Premium Properties Across India</div>
+        <p class="why-desc">Discover exclusive projects in Noida, Gurgaon, Mumbai, Pune, Bangalore, Hyderabad, Goa and more — all under one roof in Dubai.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">◆</span>
+        <div class="why-title">Unlock NRI-Focused Offers</div>
+        <p class="why-desc">Discover flexible plans, selected SDR waiver opportunities, and payment options designed exclusively for overseas buyers.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">◇</span>
+        <div class="why-title">Get Pre-Launch Access</div>
+        <p class="why-desc">Be among the first to explore upcoming projects and early investment opportunities across key Indian markets.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">✦</span>
+        <div class="why-title">Own in India While You Earn in Dubai</div>
+        <p class="why-desc">Find properties suited for end-use, family planning, rental income, and long-term capital appreciation.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div class="register-section" id="register">
+
+  <div class="register-header">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:16px">Reserve Your Spot</div>
+    <h2 class="section-title" style="text-align:center">Limited Seats Available.<br><em>Register Now.</em></h2>
+    <p class="section-body" style="text-align:center;margin:0 auto">First come, first served. Secure your exclusive pass to the most prestigious Indian real estate event in Dubai.</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card" id="formState">
+    <div class="pass-badge">✦ &nbsp; Priority Exclusive Pass &nbsp; ✦</div>
+
+    <h2 class="form-title">Reserve Your Free Pass</h2>
+    <p class="form-desc">First Come · First Serve · Limited Spots</p>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label class="field-label" for="ffname">First Name</label>
+        <input class="field-input" type="text" id="ffname" placeholder="First name" autocomplete="given-name">
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="flname">Last Name</label>
+        <input class="field-input" type="text" id="flname" placeholder="Last name" autocomplete="family-name">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="femail">Email Address</label>
+      <input class="field-input" type="email" id="femail" placeholder="your@email.com" autocomplete="email">
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="fphone">Phone Number</label>
+      <input class="field-input" type="tel" id="fphone" placeholder="+971 XX XXX XXXX" autocomplete="tel">
+    </div>
+
+    <div class="form-divider">
+      <div class="form-divider-line"></div>
+      <div class="form-divider-text">Secure · Free · Exclusive</div>
+      <div class="form-divider-line"></div>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">
+      RSVP Now
+      <span class="btn-sub">First Come · First Serve · Limited Spots</span>
+    </button>
+
+    <p class="privacy-note">Your details are secure and will only be used to confirm your exclusive event pass.</p>
+  </div>
+
+  <!-- THANK YOU -->
+  <div class="thank-you" id="thankYouState">
+    <div class="ty-card">
+      <div class="ty-icon"><span class="ty-checkmark">✦</span></div>
+      <p class="ty-eyebrow">Registration Confirmed</p>
+      <h2 class="ty-heading">You're <em>In.</em></h2>
+      <p class="ty-subhead">Your exclusive pass has been reserved.</p>
+      <div class="ty-divider"></div>
+      <div class="ty-details">
+        <div class="ty-row"><span class="ty-label">Event</span><span class="ty-val">Luxury Indian Real Estate Expo</span></div>
+        <div class="ty-row"><span class="ty-label">Date</span><span class="ty-val">9th &amp; 10th May, 2025</span></div>
+        <div class="ty-row"><span class="ty-label">Time</span><span class="ty-val">9 AM – 10 PM</span></div>
+        <div class="ty-row"><span class="ty-label">Venue</span><span class="ty-val">Business Bay, Dubai</span></div>
+        <div class="ty-row"><span class="ty-label">Pass Type</span><span class="ty-val">Priority Exclusive Pass ✦</span></div>
+        <div class="ty-row"><span class="ty-label">Includes</span><span class="ty-val">Valet · Brunch · High Tea</span></div>
+      </div>
+      <p class="ty-message">
+        A confirmation will be sent to you shortly.<br>
+        We look forward to welcoming you to one of the most exclusive<br>
+        Indian real estate events ever hosted in Dubai.<br><br>
+        <span style="color:var(--gold-light);letter-spacing:0.1em">See you on the 9th.</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-text">Luxury Indian Real Estate Expo &nbsp;·&nbsp; Dubai &nbsp;·&nbsp; May 9 &amp; 10, 2025 &nbsp;·&nbsp; Business Bay &nbsp;·&nbsp; By India's Biggest Developer</p>
+</footer>
+
+<script>
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwWyML6EfTnw9zFwllvzFc4nVx3l7f-8k7t-BPJj6hhXMJwbkIP_v4sZFNSxZJI4CmV/exec';
+
+  // Particles
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (14 + Math.random() * 22) + 's';
+    p.style.animationDelay = (Math.random() * 22) + 's';
+    p.style.width = p.style.height = (Math.random() > 0.6 ? 3 : 2) + 'px';
+    container.appendChild(p);
+  }
+
+  async function handleSubmit() {
+    const fname = document.getElementById('ffname').value.trim();
+    const lname = document.getElementById('flname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+
+    if (!fname) { shake('ffname'); return; }
+    if (!lname) { shake('flname'); return; }
+    if (!email || !email.includes('@')) { shake('femail'); return; }
+    if (!phone) { shake('fphone'); return; }
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = 'Reserving your pass\u2026<span class="btn-sub">Please wait</span>';
+
+    try {
+      await fetch(SHEET_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fname + ' ' + lname, email, phone,
+          timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Dubai' })
+        })
+      });
+    } catch(err) { console.warn(err); }
+
+    const formCard = document.getElementById('formState');
+    const tyState  = document.getElementById('thankYouState');
+    formCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    formCard.style.opacity = '0';
+    formCard.style.transform = 'translateY(-16px)';
+    setTimeout(() => {
+      formCard.style.display = 'none';
+      tyState.style.display  = 'block';
+      document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+    }, 500);
+  }
+
+  function shake(id) {
+    const el = document.getElementById(id);
+    el.style.borderBottomColor = '#E05555';
+    let c = 0;
+    const iv = setInterval(() => {
+      el.style.transform = c % 2 === 0 ? 'translateX(6px)' : 'translateX(-6px)';
+      if (++c > 5) { clearInterval(iv); el.style.transform = ''; setTimeout(() => { el.style.borderBottomColor = ''; }, 1200); }
+    }, 60);
+    el.focus();
+  }
+</script>
+</body>
+</html>
